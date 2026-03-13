@@ -21,5 +21,5 @@ authors:
     affiliation: "Chinese Academy of Sciences"
 date-released: "2026-03-13"
 license: CC-BY-4.0
-repository-code: "https://github.com/REPLACE_WITH_YOUR_ORG/benchmarking-llm-agent-robustness"
-doi: "ZENODO_DOI_HERE"
+repository-code: "https://github.com/mohhasbias/LLM-agent-drift"
+doi: "10.5281/zenodo.18995498"

@@ -207,7 +207,7 @@ If you use this artifact, please cite it:
   title  = {Benchmarking Reference-Free {LLM} Agent Robustness Under Schema, Policy, and Toolset Drift},
   author = {Assidiqi, Mohammad Hasbi and Alghazzawi, Daniyal and Alarifi, Suaad and Cheng, Li},
   year   = {2026},
-  note   = {Manuscript under peer review. Dataset DOI: ZENODO_DOI_HERE}
+  note   = {Manuscript under peer review. Dataset DOI: 10.5281/zenodo.18995498}
 }
 ```
 
