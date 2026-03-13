@@ -1,0 +1,30 @@
+{
+  "mode": "learning",
+  "episodes": 3,
+  "metric_split": "eval",
+  "train_scenarios": 10,
+  "eval_scenarios": 30,
+  "drift_types": [
+    "schema",
+    "policy",
+    "toolset"
+  ],
+  "episode_success_rates": [
+    0.1,
+    0.1,
+    0.1
+  ],
+  "learning_strategy": "rules",
+  "replay_mode": "none",
+  "enabled_rules_final": [
+    "policy",
+    "schema",
+    "toolset"
+  ],
+  "normalize": true,
+  "memory": {
+    "min_support": 1,
+    "min_confidence": 0.0,
+    "entries": []
+  }
+}

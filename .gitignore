@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.python-version
+*.egg-info/
+dist/
+build/
+.uv/
+results/rerun*/
+*.log

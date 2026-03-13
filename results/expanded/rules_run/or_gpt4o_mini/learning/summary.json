@@ -1,0 +1,100 @@
+{
+  "mode": "learning",
+  "episodes": 3,
+  "metric_split": "eval",
+  "train_scenarios": 10,
+  "eval_scenarios": 30,
+  "drift_types": [
+    "schema",
+    "policy",
+    "toolset"
+  ],
+  "episode_success_rates": [
+    0.1,
+    0.1,
+    0.1
+  ],
+  "learning_strategy": "rules",
+  "replay_mode": "none",
+  "enabled_rules_final": [
+    "policy",
+    "schema",
+    "toolset"
+  ],
+  "normalize": true,
+  "memory": {
+    "min_support": 1,
+    "min_confidence": 0.0,
+    "entries": [
+      {
+        "pattern_key": "you are an interesting guy called noah patel living in the big apple in <id> you info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 5,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 living in zipcode <id> you want to exchange the water bottle and the lamp unknown info you don't know your email",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 6,
+        "positive": 6,
+        "confidence": 1.0,
+        "num_actions": 4,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are olivia lopez and you live in texas in zipcode <id> you just lost your yourself unknown info you don't have an email",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 9,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are fatima johnson in zipcode <id> you want to change <id> to be delivered to info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 3,
+        "positive": 3,
+        "confidence": 1.0,
+        "num_actions": 3,
+        "num_step_buckets": 3
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> from a recent order you want info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 4,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 4
+      }
+    ]
+  }
+}

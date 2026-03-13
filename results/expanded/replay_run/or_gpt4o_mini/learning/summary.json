@@ -1,0 +1,1531 @@
+{
+  "mode": "learning",
+  "episodes": 3,
+  "metric_split": "eval",
+  "train_scenarios": 10,
+  "eval_scenarios": 30,
+  "drift_types": [
+    "schema",
+    "policy",
+    "toolset"
+  ],
+  "episode_success_rates": [
+    0.2222222222222222,
+    0.23333333333333334,
+    0.2222222222222222
+  ],
+  "learning_strategy": "replay_blind",
+  "replay_mode": "reference_blind",
+  "enabled_rules_final": [],
+  "normalize": true,
+  "memory": {
+    "min_support": 1,
+    "min_confidence": 0.0,
+    "entries": [
+      {
+        "pattern_key": "you are an interesting guy called noah patel living in the big apple in <id> you info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 living in zipcode <id> you want to exchange the water bottle and the lamp unknown info you don't know your email",
+        "drift_type": "schema",
+        "tool_name": "exchange_delivered_order_items",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 29,
+        "positive": 5,
+        "confidence": 0.1724,
+        "num_actions": 5,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are olivia lopez and you live in texas in zipcode <id> you just lost your yourself unknown info you don't have an email",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 27,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are fatima johnson in zipcode <id> you want to change <id> to be delivered to info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> from a recent order you want info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "exchange_delivered_order_items",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 31,
+        "positive": 7,
+        "confidence": 0.2258,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 in zipcode <id> you want to exchange the water bottle and the desk info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> you have an order sent to info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you are mei davis in zipcode <id> you want to return the office chair because it info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "your name is daiki sanchez and you live in <id> your email is <email> you just things done quickly and you speak very briefly",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 69,
+        "positive": 22,
+        "confidence": 0.3188,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are mia_garcia_4516 <email> you just got into gaming and want to cancel or return everything but realized the importance of studying hard recently",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 18,
+        "positive": 18,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are an interesting guy called noah patel living in the big apple in <id> you info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [],
+        "support": 18,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 living in zipcode <id> you want to exchange the water bottle and the lamp unknown info you don't know your email",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 24,
+        "positive": 24,
+        "confidence": 1.0,
+        "num_actions": 6,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you are olivia lopez and you live in texas in zipcode <id> you just lost your yourself unknown info you don't have an email",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 28,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 10
+      },
+      {
+        "pattern_key": "you are fatima johnson in zipcode <id> you want to change <id> to be delivered to info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "order_id",
+          "state",
+          "zip"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> from a recent order you want info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 in zipcode <id> you want to exchange the water bottle and the desk info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 27,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> you have an order sent to info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are mei davis in zipcode <id> you want to return the office chair because it info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "exchange_delivered_order_items",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 26,
+        "positive": 14,
+        "confidence": 0.5385,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "your name is daiki sanchez and you live in <id> your email is <email> you just things done quickly and you speak very briefly",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 72,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 9,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are mia_garcia_4516 <email> you just got into gaming and want to cancel or return everything but realized the importance of studying hard recently",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 21,
+        "confidence": 1.0,
+        "num_actions": 6,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you are an interesting guy called noah patel living in the big apple in <id> you info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 living in zipcode <id> you want to exchange the water bottle and the lamp unknown info you don't know your email",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 30,
+        "positive": 6,
+        "confidence": 0.2,
+        "num_actions": 5,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are olivia lopez and you live in texas in zipcode <id> you just lost your yourself unknown info you don't have an email",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 27,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are fatima johnson in zipcode <id> you want to change <id> to be delivered to info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 15,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> from a recent order you want info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 31,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are mei_kovacs_8020 in zipcode <id> you want to exchange the water bottle and the desk info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_product_details__new",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 18,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are isabella johansson and you live in zipcode <id> you have an order sent to info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 21,
+        "confidence": 1.0,
+        "num_actions": 4,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you are mei davis in zipcode <id> you want to return the office chair because it info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_product_details__new",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "your name is daiki sanchez and you live in <id> your email is <email> you just things done quickly and you speak very briefly",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_email__new",
+        "arg_keys": [
+          "email"
+        ],
+        "support": 44,
+        "positive": 21,
+        "confidence": 0.4773,
+        "num_actions": 12,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are mia_garcia_4516 <email> you just got into gaming and want to cancel or return everything but realized the importance of studying hard recently",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 18,
+        "positive": 18,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are fatima_taylor_3452 and you just moved from florida <id> to phoenix <id> you just moved info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella lopez and your email address is <email> you want to know how much anxious and want to get things done quickly",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_email",
+        "arg_keys": [
+          "email"
+        ],
+        "support": 9,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 3
+      },
+      {
+        "pattern_key": "your name is mei patel and you live in <id> maple drive suite <id> fort worth info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "modify_user_address",
+        "arg_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "state",
+          "user_id",
+          "zip"
+        ],
+        "support": 28,
+        "positive": 8,
+        "confidence": 0.2857,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are daiki_johnson_9523 living in denver usa <id> you want to exchange a robotic vacuum cleaner info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 10,
+        "confidence": 0.6667,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are aarav anderson residing in philadelphia <id> you mistakenly ordered a wireless earbud with an info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> you want to return the digital camera info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 18,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> the bicycle you received was damaged during info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are amelia and you have two emails <email> and <email> you live in philadelphia and to talk a lot and explain your situation",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 27,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are ivan_hernandez_6923 living in san diego <id> you wonder when is your air purifier is firm unknown info you don't have an email",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 24,
+        "positive": 12,
+        "confidence": 0.5,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> you want to change your wireless earbuds in info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name"
+        ],
+        "support": 72,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> as you are interacting with a customer service info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james sanchez you live in chicago <id> you want to exchange the camera for info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james kovacs from san jose ca <id> you want to exchange the bookshelf from info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 36,
+        "confidence": 1.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are user noah_ito_3850 living in seattle wa <id> you want to check how much you info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_user_details",
+        "arg_keys": [
+          "user_id"
+        ],
+        "support": 6,
+        "positive": 6,
+        "confidence": 1.0,
+        "num_actions": 2,
+        "num_step_buckets": 2
+      },
+      {
+        "pattern_key": "you name is sofia hernandez and your zip code is <id> you recently received a helmet info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 17,
+        "positive": 10,
+        "confidence": 0.5882,
+        "num_actions": 7,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is ivan khan and your zip code is <id> you made some mistake and info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you name is lei li and your zip code is <id> you recently bought a laptop say you want to use your credit card",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 18,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you name is ivan johnson and your zip code is <id> you ordered a perfume and info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 25,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your zip code is <id> you just bought a water your email you do not know order numbers",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is yusuf hernandez and your email is <email> you want to exchange your fleece one of the orders you are shy rigid",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your email is <email> you want to know if the you are polite curious flexible relaxing yet impatient",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 21,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is lei wilson and your zip code is <id> you received a laptop and info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is yusuf li and your zip code is <id> you want to change your organized unknown info you don't know your email",
+        "drift_type": "schema",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is liam thomas and your zip code is <id> you want to return your info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is noah ito and your zip code is <id> you just placed an order info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 68,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yusuf gonzalez and your zip code is <id> you want to return everything info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 24,
+        "confidence": 1.0,
+        "num_actions": 4,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is yara silva and your zip code is <id> you want to modify the info you do not remember your email address",
+        "drift_type": "schema",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are fatima_taylor_3452 and you just moved from florida <id> to phoenix <id> you just moved info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella lopez and your email address is <email> you want to know how much anxious and want to get things done quickly",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [],
+        "support": 12,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 4
+      },
+      {
+        "pattern_key": "your name is mei patel and you live in <id> maple drive suite <id> fort worth info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you are daiki_johnson_9523 living in denver usa <id> you want to exchange a robotic vacuum cleaner info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [],
+        "support": 18,
+        "positive": 12,
+        "confidence": 0.6667,
+        "num_actions": 6,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you are aarav anderson residing in philadelphia <id> you mistakenly ordered a wireless earbud with an info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> you want to return the digital camera info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 15,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> the bicycle you received was damaged during info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are amelia and you have two emails <email> and <email> you live in philadelphia and to talk a lot and explain your situation",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 33,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 11
+      },
+      {
+        "pattern_key": "you are ivan_hernandez_6923 living in san diego <id> you wonder when is your air purifier is firm unknown info you don't have an email",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 21,
+        "confidence": 1.0,
+        "num_actions": 6,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> you want to change your wireless earbuds in info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [
+          "address1"
+        ],
+        "support": 72,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> as you are interacting with a customer service info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 35,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james sanchez you live in chicago <id> you want to exchange the camera for info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 26,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james kovacs from san jose ca <id> you want to exchange the bookshelf from info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 26,
+        "positive": 26,
+        "confidence": 1.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are user noah_ito_3850 living in seattle wa <id> you want to check how much you info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 36,
+        "confidence": 1.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is sofia hernandez and your zip code is <id> you recently received a helmet info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [],
+        "support": 22,
+        "positive": 6,
+        "confidence": 0.2727,
+        "num_actions": 8,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is ivan khan and your zip code is <id> you made some mistake and info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "modify_pending_order_items",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 21,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is lei li and your zip code is <id> you recently bought a laptop say you want to use your credit card",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [],
+        "support": 21,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is ivan johnson and your zip code is <id> you ordered a perfume and info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "modify_pending_order_items",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your zip code is <id> you just bought a water your email you do not know order numbers",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is yusuf hernandez and your email is <email> you want to exchange your fleece one of the orders you are shy rigid",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your email is <email> you want to know if the you are polite curious flexible relaxing yet impatient",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 24,
+        "confidence": 1.0,
+        "num_actions": 6,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is lei wilson and your zip code is <id> you received a laptop and info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "confirm_policy_compliance",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 11,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yusuf li and your zip code is <id> you want to change your organized unknown info you don't know your email",
+        "drift_type": "policy",
+        "tool_name": "get_product_details",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is liam thomas and your zip code is <id> you want to return your info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is noah ito and your zip code is <id> you just placed an order info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 63,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 10,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yusuf gonzalez and your zip code is <id> you want to return everything info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 31,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yara silva and your zip code is <id> you want to modify the info you do not remember your email address",
+        "drift_type": "policy",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are fatima_taylor_3452 and you just moved from florida <id> to phoenix <id> you just moved info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "return_delivered_order_items",
+        "arg_keys": [
+          "item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 36,
+        "positive": 24,
+        "confidence": 0.6667,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are isabella lopez and your email address is <email> you want to know how much anxious and want to get things done quickly",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_email__new",
+        "arg_keys": [
+          "email"
+        ],
+        "support": 9,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 3
+      },
+      {
+        "pattern_key": "your name is mei patel and you live in <id> maple drive suite <id> fort worth info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "modify_user_address__new",
+        "arg_keys": [
+          "address1",
+          "address2",
+          "city",
+          "country",
+          "state",
+          "user_id",
+          "zip"
+        ],
+        "support": 28,
+        "positive": 8,
+        "confidence": 0.2857,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are daiki_johnson_9523 living in denver usa <id> you want to exchange a robotic vacuum cleaner info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 10,
+        "confidence": 0.6667,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are aarav anderson residing in philadelphia <id> you mistakenly ordered a wireless earbud with an info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_product_details__new",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> you want to return the digital camera info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 12,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 4
+      },
+      {
+        "pattern_key": "you are sofia li residing in san antonio <id> the bicycle you received was damaged during info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are amelia and you have two emails <email> and <email> you live in philadelphia and to talk a lot and explain your situation",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 27,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 4,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you are ivan_hernandez_6923 living in san diego <id> you wonder when is your air purifier is firm unknown info you don't have an email",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details__new",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 12,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 3,
+        "num_step_buckets": 4
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> you want to change your wireless earbuds in info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name"
+        ],
+        "support": 72,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are chen johnson from houston tx <id> as you are interacting with a customer service info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_product_details__new",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james sanchez you live in chicago <id> you want to exchange the camera for info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_product_details__new",
+        "arg_keys": [
+          "product_id"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 5,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you are james kovacs from san jose ca <id> you want to exchange the bookshelf from info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip__new",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 15,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you are user noah_ito_3850 living in seattle wa <id> you want to check how much you info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_user_details__new",
+        "arg_keys": [
+          "user_id"
+        ],
+        "support": 24,
+        "positive": 24,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is sofia hernandez and your zip code is <id> you recently received a helmet info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_user_details",
+        "arg_keys": [
+          "user_id"
+        ],
+        "support": 16,
+        "positive": 10,
+        "confidence": 0.625,
+        "num_actions": 5,
+        "num_step_buckets": 6
+      },
+      {
+        "pattern_key": "you name is ivan khan and your zip code is <id> you made some mistake and info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name"
+        ],
+        "support": 22,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is lei li and your zip code is <id> you recently bought a laptop say you want to use your credit card",
+        "drift_type": "toolset",
+        "tool_name": "modify_pending_order_items__new",
+        "arg_keys": [
+          "item_ids",
+          "new_item_ids",
+          "order_id",
+          "payment_method_id"
+        ],
+        "support": 26,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 9,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is ivan johnson and your zip code is <id> you ordered a perfume and info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "support": 15,
+        "positive": 15,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 5
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your zip code is <id> you just bought a water your email you do not know order numbers",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 26,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 9
+      },
+      {
+        "pattern_key": "you name is yusuf hernandez and your email is <email> you want to exchange your fleece one of the orders you are shy rigid",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is emma kovacs and your email is <email> you want to know if the you are polite curious flexible relaxing yet impatient",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 21,
+        "positive": 21,
+        "confidence": 1.0,
+        "num_actions": 5,
+        "num_step_buckets": 7
+      },
+      {
+        "pattern_key": "you name is lei wilson and your zip code is <id> you received a laptop and info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "find_user_id_by_name_zip",
+        "arg_keys": [
+          "first_name"
+        ],
+        "support": 24,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 6,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yusuf li and your zip code is <id> you want to change your organized unknown info you don't know your email",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 31,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 7,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is liam thomas and your zip code is <id> you want to return your info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is noah ito and your zip code is <id> you just placed an order info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 60,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      },
+      {
+        "pattern_key": "you name is yusuf gonzalez and your zip code is <id> you want to return everything info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 24,
+        "positive": 24,
+        "confidence": 1.0,
+        "num_actions": 4,
+        "num_step_buckets": 8
+      },
+      {
+        "pattern_key": "you name is yara silva and your zip code is <id> you want to modify the info you do not remember your email address",
+        "drift_type": "toolset",
+        "tool_name": "get_order_details",
+        "arg_keys": [
+          "order_id"
+        ],
+        "support": 36,
+        "positive": 0,
+        "confidence": 0.0,
+        "num_actions": 8,
+        "num_step_buckets": 12
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite it using the metadata below."
+title: "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift: Data and Code Artifact"
+type: dataset
+authors:
+  - family-names: Assidiqi
+    given-names: Mohammad Hasbi
+    orcid: "https://orcid.org/0000-0001-8640-9584"
+    affiliation: "King Abdulaziz University"
+  - family-names: Alghazzawi
+    given-names: Daniyal
+    orcid: "https://orcid.org/0000-0002-5533-3203"
+    affiliation: "King Abdulaziz University"
+  - family-names: Alarifi
+    given-names: Suaad
+    orcid: "https://orcid.org/0000-0001-9753-1251"
+    affiliation: "King Abdulaziz University"
+  - family-names: Cheng
+    given-names: Li
+    orcid: "https://orcid.org/0000-0003-1049-3067"
+    affiliation: "Chinese Academy of Sciences"
+date-released: "2026-03-13"
+license: CC-BY-4.0
+repository-code: "https://github.com/REPLACE_WITH_YOUR_ORG/benchmarking-llm-agent-robustness"
+doi: "ZENODO_DOI_HERE"

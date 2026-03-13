@@ -1,0 +1,21 @@
+{
+  "mode": "static",
+  "episodes": 3,
+  "metric_split": "eval",
+  "train_scenarios": 10,
+  "eval_scenarios": 30,
+  "drift_types": [
+    "schema",
+    "policy",
+    "toolset"
+  ],
+  "episode_success_rates": [
+    0.12222222222222222,
+    0.1111111111111111,
+    0.15555555555555556
+  ],
+  "learning_strategy": "none",
+  "replay_mode": "none",
+  "enabled_rules_final": [],
+  "normalize": false
+}

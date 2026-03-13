@@ -1,0 +1,47 @@
+{
+  "title": "Benchmarking Reference-Free LLM Agent Robustness Under Schema, Policy, and Toolset Drift: Data and Code Artifact",
+  "upload_type": "dataset",
+  "description": "Episode-level evaluation records, full source code, and analysis scripts for a 5-model benchmark measuring LLM agent robustness under three controlled drift families (schema, policy, toolset). Covers the expanded evaluation: 270 reference-free trials per model-condition cell (30 eval scenarios × 3 episodes × 3 drift families) across 5 models and 3 conditions (static, blind-replay, rules-only), plus a normalization-ablation run. All numerical claims in the manuscript can be independently verified offline from the stored episode_records.jsonl files using the included stdlib-only recompute_metrics.py script. Associated manuscript is under peer review.",
+  "creators": [
+    {
+      "name": "Assidiqi, Mohammad Hasbi",
+      "affiliation": "Department of Information Systems, King Abdulaziz University, Jeddah, Saudi Arabia",
+      "orcid": "0000-0001-8640-9584"
+    },
+    {
+      "name": "Alghazzawi, Daniyal",
+      "affiliation": "Department of Information Systems, King Abdulaziz University, Jeddah, Saudi Arabia",
+      "orcid": "0000-0002-5533-3203"
+    },
+    {
+      "name": "Alarifi, Suaad",
+      "affiliation": "Department of Information Systems, King Abdulaziz University, Jeddah, Saudi Arabia",
+      "orcid": "0000-0001-9753-1251"
+    },
+    {
+      "name": "Cheng, Li",
+      "affiliation": "Xinjiang Technical Institute of Physics and Chemistry, Chinese Academy of Sciences, Urumqi, China",
+      "orcid": "0000-0003-1049-3067"
+    }
+  ],
+  "keywords": [
+    "LLM agents",
+    "tool use robustness",
+    "schema drift",
+    "toolset drift",
+    "policy drift",
+    "benchmark",
+    "reproducibility",
+    "online adaptation"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "PAPER_DOI_HERE",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Upstream tau2-bench dataset: MIT license (Sierra et al., 2024). See licenses/tau2-bench-LICENSE-MIT.txt."
+}

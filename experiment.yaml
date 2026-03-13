@@ -1,0 +1,70 @@
+name: learning-agent-online-adaptation
+description: Online adaptation under controlled tool/policy drift
+
+datasets:
+  tau2bench_adapted:
+    local_path: data/tau2bench/converted/tau2bench-retail-test-adapted.jsonl
+    auto_download: false
+  tau2bench_adapted_observed:
+    local_path: data/tau2bench/converted/tau2bench-retail-test-adapted-observed.jsonl
+    auto_download: false
+
+scenarios:
+  active: pilot_n12
+  defaults:
+    dataset: tau2bench_adapted_observed
+    models: [or_qwen3_32b, or_kimi_k2, or_gpt4o_mini]
+    conditions: baseline_only
+    output_root: results/raw
+  available:
+    pilot_n12:
+      label: "12-scenario tau2bench-derived retail pilot subset"
+      description: "Curated subset used for the manuscript holdout pilot gate."
+      scenario_index_path: data/pilot_n12_index.json
+    phase_a_split1:
+      label: "Phase A split 1 (train=8, eval=8)"
+      description: "Deterministic Phase A calibration split 1."
+      scenario_index_path: data/phase_a/phase_a_split1_combined.json
+    phase_a_split2:
+      label: "Phase A split 2 (train=8, eval=8)"
+      description: "Deterministic Phase A calibration split 2."
+      scenario_index_path: data/phase_a/phase_a_split2_combined.json
+    phase_a_split3:
+      label: "Phase A split 3 (train=8, eval=8)"
+      description: "Deterministic Phase A calibration split 3."
+      scenario_index_path: data/phase_a/phase_a_split3_combined.json
+    expanded_n40:
+      label: "All 40 scenarios (10 train, 30 eval)"
+      description: "Full available pool for expanded evaluation run."
+      scenario_index_path: data/expanded_n40_index.json
+      dataset: tau2bench_adapted_observed
+      models: [or_gpt4o_mini, or_kimi_k2, or_qwen3_32b, or_gpt4o, or_deepseek_v3]
+      conditions: baseline_only
+      output_root: results/raw_task_success_expanded_2026-03-10
+
+condition_sets:
+  baseline_only:
+    - "0000"
+
+models:
+  or_qwen3_32b:
+    provider: openrouter
+    model_name: qwen/qwen3-32b
+  or_kimi_k2:
+    provider: openrouter
+    model_name: moonshotai/kimi-k2
+  or_gpt4o_mini:
+    provider: openrouter
+    model_name: openai/gpt-4o-mini
+  or_gemini20_flash:
+    provider: openrouter
+    model_name: google/gemini-2.0-flash-001
+  or_gpt4o:
+    provider: openrouter
+    model_name: openai/gpt-4o
+  or_llama33_70b:
+    provider: openrouter
+    model_name: meta-llama/llama-3.3-70b-instruct
+  or_deepseek_v3:
+    provider: openrouter
+    model_name: deepseek/deepseek-chat
